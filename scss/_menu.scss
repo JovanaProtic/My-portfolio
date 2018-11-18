@@ -11,7 +11,7 @@
         width: 28px;
         height: 3px;
         margin: 0 0 5px 0;
-        background-color: #fff;
+        background-color: set-text-color($primary-color);
         @include easeOut;
     }
 
@@ -66,7 +66,7 @@
         padding: 0;
         background: darken($primary-color, 5);
         list-style: none;
-        transition: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
         @include easeOut;
 
         &.show {
@@ -78,18 +78,20 @@
     // Branding Side
     &-branding {
         background: $primary-color;
-        transition: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
         @include easeOut;
 
         &.show {
             // Slide in from bottom
-            transition: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
         }
 
         .portrait {
             width: 250px;
             height: 250px;
-            background: url('../img/portrait.jpg');
+            background-image: url('../img/portrait.jpg');
+            background-position: center;
+            background-size: cover;
             border-radius: 50%;
             border: solid 3px $secondary-color;
         }
@@ -116,7 +118,7 @@
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 300;
-        color: #fff;
+        color: set-text-color($primary-color);
         text-decoration: none;
         @include easeOut;
 
